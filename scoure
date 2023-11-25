@@ -1,0 +1,27 @@
+## Number guess game
+import random
+
+print("This is guessing game")
+lower = int(input("Enter any integer value starting range"))
+bigger = int(input("Enter any integer value Ending range"))
+
+a = random.randint(lower, bigger)
+
+
+count = 0
+while count < 4:
+  guess = int(input("Enter your guess: "))
+  if guess == a:
+    print("you're right...!")
+    break
+  elif guess < a:
+    print("you guessed to low number, try again ....!!!!")
+  elif guess > a:
+    print("you guess to big number, try agian ........!!!!")
+  else:
+    print("guessed worng try again")
+  count += 1
+  
+
+print("guessed worng try next time")
+    
