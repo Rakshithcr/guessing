@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function startGame() {
+            // Your Python code for the number guessing game translated to JavaScript
+            const lower = parseInt(prompt("Enter any integer value for the starting range"));
+            const bigger = parseInt(prompt("Enter any integer value for the ending range"));
+
+            const secretNumber = Math.floor(Math.random() * (bigger - lower + 1)) + lower;
+
+            let count = 0;
+
+            while (count < 4) {
+                const guess = parseInt(prompt("Enter your guess:"));
+
+                if (guess === secretNumber) {
+                    alert("You're right...!");
+                    break;
+                } else if (guess < secretNumber) {
+                    alert("You guessed too low. Try again!");
+                } else if (guess > secretNumber) {
+                    alert("You guessed too high. Try again!");
+                } else {
+                    alert("Guessed wrong. Try again.");
+                }
+
+                count++;
+            }
+
+            alert("Guessed wrong. Try next time.");
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Click the button below to start the game.</p>
+    <button onclick="startGame()">Start Game</button>
+    <div id="output"></div>
+</body>
+</html>
